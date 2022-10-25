@@ -1,11 +1,13 @@
 import React from 'react';
 
-const UserContext = () => {
+const Courses = () => {
     return (
         <div>
             
+                <h1>courses</h1>
+           
         </div>
     );
 };
 
-export default UserContext;
+export default Courses;

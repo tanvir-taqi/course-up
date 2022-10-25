@@ -1,11 +1,11 @@
 import React from 'react';
 
-const UserContext = () => {
+const Home = () => {
     return (
         <div>
-            
+            <h1>home</h1>
         </div>
     );
 };
 
-export default UserContext;
+export default Home;
