@@ -1,10 +1,22 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
+import SingleCourse from '../SingleCourse/SingleCourse';
 
 const Courses = () => {
+
+    const courses  = useLoaderData()
+
     return (
-        <div>
+        <div className='py-32 course-container'>
             
-                <h1>courses</h1>
+                <div>
+
+                </div>
+                <div>
+                    {
+                        courses.map(course => <SingleCourse key={course._id} course={course}></SingleCourse>)
+                    }
+                </div>
            
         </div>
     );
