@@ -7,7 +7,8 @@ const SingleCourse = ({course}) => {
     const {_id,title,picture,rating,intro} = course
 
     return (
-        <div className='course-card p-6 border border-slate-900'>
+        <div className='course-card p-6 border border-slate-900 relative'>
+            <div className='absolute inset-x-3/4 -inset-y-4'><p>trending</p></div>
             <img src={picture} alt="" />
             <h1 className='text-xl font-semibold py-2'>{title}</h1>
             <p>{intro.lenght < 150 ? intro : intro.slice(0,150)}...</p>
