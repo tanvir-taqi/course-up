@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useContext } from 'react';
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from 'react-icons/fa';
@@ -7,9 +7,10 @@ import { AuthContext } from '../../context/UserContext';
 const Login = () => {
 const [showPassword, setShowPassword] = useState(false)
 const {signInSocial} = useContext(AuthContext)
-const provider = new GoogleAuthProvider();
+const providerGoogle = new GoogleAuthProvider();
+const providerGithub = new GithubAuthProvider();
 
-const handleGoogleSignIn =(provider)=>{
+const handleSocialSignIn =(provider)=>{
     signInSocial(provider)
     .then(res=>{
         const user = res.user
@@ -45,8 +46,8 @@ e.preventDefault()
                       <br />
 
                 <div className='flex flex-col'>
-                <button className='mt-6 p-2 rounded-2xl bg-blue-500 flex items-center justify-center' onClick={()=>handleGoogleSignIn(provider)}> <FaGoogle></FaGoogle> <span className='ml-1'>Sign In With Google</span> </button>
-                <button className='mt-6 p-2 rounded-2xl bg-gray-600 flex items-center justify-center' > <FaGithub></FaGithub> <span className='ml-1'>Sign In With Github</span> </button>
+                <button className='mt-6 p-2 rounded-2xl bg-blue-500 flex items-center justify-center' onClick={()=>handleSocialSignIn(providerGoogle)}> <FaGoogle></FaGoogle> <span className='ml-1'>Sign In With Google</span> </button>
+                <button className='mt-6 p-2 rounded-2xl bg-gray-600 flex items-center justify-center' onClick={()=>handleSocialSignIn(providerGithub)}> <FaGithub></FaGithub> <span className='ml-1'>Sign In With Github</span> </button>
                 </div>
             </form>
             

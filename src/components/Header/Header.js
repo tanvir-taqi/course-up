@@ -10,8 +10,13 @@ import './Header.css'
 
 const Header = () => {
     const [display, setDisplay] = useState(false)
-    const {user} = useContext(AuthContext)
+    const {user,logOut} = useContext(AuthContext)
 
+    const handleLogOut =()=>{
+            logOut()
+            .then(res => {})
+            .catch(err => console.log(err))
+    }
     
     return (
         <div>
@@ -29,8 +34,8 @@ const Header = () => {
                     <div className="user  md:mx-2 ">
                         {
                             user ? <div className='flex'>
-                                <img src={user?.photoURL} alt="" className="user-img" title={user?.displayName} />
-                                <button className='mx-2'>Log Out</button>
+                                <img src={user?.photoURL} alt="" className="user-img cursor-pointer" title={user?.displayName} />
+                                <button onClick={handleLogOut} className='mx-2'>Log Out</button>
 
                             </div> : <Link to='/login' className=' font-semibold text-lg'>Log In </Link>
                         }
