@@ -6,7 +6,7 @@ export const AuthContext = createContext()
 const UserContext = ({ children }) => {
 
 
-    const authInfo = {name:"tanvir"}
+    const authInfo = {}
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
