@@ -21,7 +21,7 @@ const CourseDetails = () => {
                 <p className='flex items-center'>Rating: {rating} <span> <FaHeart></FaHeart> </span></p>
                 <br />
                 <p className='p-6'>{intro}</p>
-                <Link>
+                <Link to={`/courses/premium/${_id}`}>
                 <button >Get Premium Access</button>
                 </Link>
            </div>
