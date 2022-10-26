@@ -16,7 +16,7 @@ const CourseDetails = () => {
                 <img src={picture} alt="" />
             </div>
             <div className='w-full flex flex-col justify-center items-center'>
-                <h1 className='text-6xl font-extrabold'>{title}</h1>
+                <h1 className='md:text-4xl lg:text-6xl font-extrabold'>{title}</h1>
                 <p className='font-semibold'>Instructor: <span className='text-lg font-bold'>{name}</span> </p>
                 <p className='flex items-center'>Rating: {rating} <span> <FaHeart></FaHeart> </span></p>
                 <br />

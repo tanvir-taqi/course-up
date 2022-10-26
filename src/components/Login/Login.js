@@ -2,21 +2,27 @@ import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useContext } from 'react';
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/UserContext';
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false)
-    const { signInSocial, signInUser } = useContext(AuthContext)
+    const { signInSocial, signInUser ,setIsLoading} = useContext(AuthContext)
     const providerGoogle = new GoogleAuthProvider();
     const providerGithub = new GithubAuthProvider();
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
 
     const handleSocialSignIn = (provider) => {
         signInSocial(provider)
             .then(res => {
                 const user = res.user
+                
+                navigate(from, { replace: true })
             })
-            .catch(err => console.log(err))
+            .catch(err => alert(err))
+            .finally(()=>setIsLoading(false))
     }
 
     const handleLoginSubmit = (e) => {
@@ -27,8 +33,11 @@ const Login = () => {
         signInUser(email,password)
         .then(res=>{
             const user = res.user
+            
+            navigate(from, { replace: true })
         })
         .catch(err => alert(err))
+        .finally(()=>setIsLoading(false))
     }
 
     return (

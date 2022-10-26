@@ -4,9 +4,11 @@ import Courses from "../components/Courses/Courses";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
+import PremiumCourse from "../components/PremiumCourse/PremiumCourse";
 import ProfileUpdate from "../components/ProfileUpdate/ProfileUpdate";
 import Register from "../components/Register/Register";
 import Main from "../layouts/Main";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -32,6 +34,11 @@ export const router = createBrowserRouter([
                 loader:({params})=>fetch(`https://courseup-one.vercel.app/courses/${params.id}`)
             },
             {
+                path:'/courses/premium/:id',
+                element:<PrivateRoute><PremiumCourse></PremiumCourse></PrivateRoute>,
+                loader:({params})=>fetch(`https://courseup-one.vercel.app/courses/${params.id}`)
+            },
+            {
                 path:'/login',
                 element:<Login></Login>
             },
@@ -40,7 +47,7 @@ export const router = createBrowserRouter([
                 element:<Register></Register>
             },
             {
-                path:'/upddate',
+                path:'/update',
                 element:<ProfileUpdate></ProfileUpdate>
             },
         ]  

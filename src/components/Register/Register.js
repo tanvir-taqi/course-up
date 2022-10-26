@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/UserContext';
 
 const Register = () => {
-    const {createUser}  = useContext(AuthContext)
+    const {createUser,setIsLoading}  = useContext(AuthContext)
 
     
     const handleRegister = (e)=>{
@@ -20,8 +20,10 @@ const Register = () => {
             createUser(email,password)
             .then(res =>{
                 const user = res.user
+                
             })
             .catch(err => alert(err))
+            .finally(()=>setIsLoading(false))
         }
 
     }

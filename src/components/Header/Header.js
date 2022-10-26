@@ -10,12 +10,13 @@ import './Header.css'
 
 const Header = () => {
     const [display, setDisplay] = useState(false)
-    const {user,logOut} = useContext(AuthContext)
+    const {user,logOut,setIsLoading} = useContext(AuthContext)
 
     const handleLogOut =()=>{
             logOut()
             .then(res => {})
             .catch(err => console.log(err))
+            .finally(()=>setIsLoading(false))
     }
     
     return (
