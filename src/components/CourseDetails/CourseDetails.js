@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaHeart } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import './CourseDetails.css'
 
 const CourseDetails = () => {
@@ -21,7 +21,9 @@ const CourseDetails = () => {
                 <p className='flex items-center'>Rating: {rating} <span> <FaHeart></FaHeart> </span></p>
                 <br />
                 <p className='p-6'>{intro}</p>
-
+                <Link>
+                <button >Get Premium Access</button>
+                </Link>
            </div>
 
             </div>

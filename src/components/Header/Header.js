@@ -19,8 +19,8 @@ const Header = () => {
     }
     
     return (
-        <div>
-            <div className="fixed  w-full header py-5 bg-emerald-300 flex flex-col md:flex-row justify-around items-center">
+        <div >
+            <div className="fixed z-50 w-full header py-5 bg-emerald-300 flex flex-col md:flex-row justify-around items-center">
                 <div className="header-logo flex justify-around around items-center w-full  md:w-1/6">
                     <Link to='/' onClick={()=>setDisplay(false)} className='font-bold text-emerald-900 text-2xl'>Course<span className=' text-4xl font-extrabold text-gray-900 shadow-sm'>UP</span> </Link>
                     <button className='block md:hidden' onClick={()=>setDisplay(!display)}><HiBars3BottomRight></HiBars3BottomRight></button>
@@ -34,7 +34,7 @@ const Header = () => {
                     <div className="user  md:mx-2 ">
                         {
                             user ? <div className='flex'>
-                                <img src={user?.photoURL} alt="" className="user-img cursor-pointer" title={user?.displayName} />
+                              <Link to='/update'>  <img src={user?.photoURL} alt="" className="user-img cursor-pointer" title={user?.displayName} /></Link>
                                 <button onClick={handleLogOut} className='mx-2'>Log Out</button>
 
                             </div> : <Link to='/login' className=' font-semibold text-lg'>Log In </Link>
