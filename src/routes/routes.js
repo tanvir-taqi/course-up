@@ -48,7 +48,7 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/update',
-                element:<ProfileUpdate></ProfileUpdate>
+                element:<PrivateRoute><ProfileUpdate></ProfileUpdate></PrivateRoute>
             },
         ]  
     },

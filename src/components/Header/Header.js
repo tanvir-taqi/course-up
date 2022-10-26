@@ -5,12 +5,14 @@ import { HiBars3BottomRight } from "react-icons/hi2";
 import { useContext } from 'react';
 import { AuthContext } from '../../context/UserContext';
 import './Header.css'
+import { FaUser } from 'react-icons/fa';
 
 
 
 const Header = () => {
     const [display, setDisplay] = useState(false)
     const {user,logOut,setIsLoading} = useContext(AuthContext)
+    console.log(user);
 
     const handleLogOut =()=>{
             logOut()
@@ -26,7 +28,7 @@ const Header = () => {
                     <Link to='/' onClick={()=>setDisplay(false)} className='font-bold text-emerald-900 text-2xl'>Course<span className=' text-4xl font-extrabold text-gray-900 shadow-sm'>UP</span> </Link>
                     <button className='block md:hidden' onClick={()=>setDisplay(!display)}><HiBars3BottomRight></HiBars3BottomRight></button>
                 </div>
-                <div className={`nav-menu flex  md:items-center flex-col md:flex-row  ${display ? 'flex':'hidden md:flex'}`} onClick={()=>setDisplay(false)}>
+                <div className={`nav-menu flex  md:items-center flex-col md:flex-row   ${display ? 'flex':'hidden md:flex'}`} onClick={()=>setDisplay(false)}>
                     <div className="nav-menu-link items-start flex flex-col md:flex-row py-12 md:py-1 ">
                         <Link className='mr-4 text-lg font-semibold text-gray-700 hover:text-black' to='/home'>Home</Link>
                         <Link className='mr-4 text-lg font-semibold text-gray-700 hover:text-black' to='/courses'>Courses</Link>
@@ -34,8 +36,8 @@ const Header = () => {
                     </div>
                     <div className="user  md:mx-2 ">
                         {
-                            user ? <div className='flex'>
-                              <Link to='/update'>  <img src={user?.photoURL} alt="" className="user-img cursor-pointer" title={user?.displayName} /></Link>
+                            user ? <div className='flex items-center'>
+                              <Link to='/update'> {user?.photoURL ? <img src={user?.photoURL} alt="" className="user-img cursor-pointer" title={user?.displayName} /> : <FaUser></FaUser>} </Link>
                                 <button onClick={handleLogOut} className='mx-2'>Log Out</button>
 
                             </div> : <Link to='/login' className=' font-semibold text-lg'>Log In </Link>
