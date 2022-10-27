@@ -7,7 +7,7 @@ import { AuthContext } from '../../context/UserContext';
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false)
-    const { signInSocial, signInUser ,setIsLoading} = useContext(AuthContext)
+    const { signInSocial, signInUser ,setIsLoading,dark} = useContext(AuthContext)
     const providerGoogle = new GoogleAuthProvider();
     const providerGithub = new GithubAuthProvider();
     const navigate = useNavigate()
@@ -43,7 +43,7 @@ const Login = () => {
 
     return (
         <div className='py-32 flex justify-center'>
-            <form onSubmit={handleLoginSubmit} className=' w-full md:w-1/3 flex flex-col bg-slate-100 p-20 rounded-3xl'>
+            <form onSubmit={handleLoginSubmit} className={` w-full md:w-1/3 flex flex-col  ${dark?'bg-slate-300' : 'bg-slate-700' } p-20 rounded-3xl`}>
                 <div className="form-group flex flex-col py-3">
                     <label className='text-lg font-medium' htmlFor="email">Email</label>
                     <input className='border border-gray-700 text-black rounded-lg py-1 px-2' type="email" name="email" id="email" placeholder='Enter Your Email' />
@@ -59,7 +59,7 @@ const Login = () => {
                     </div>
                     <input className='border border-gray-700 text-black rounded-lg py-1 px-2' type={showPassword ? 'text' : 'password'} name="password" id="password" placeholder='Enter Your Password' />
                 </div>
-                <button className='mt-6 p-2 rounded-2xl bg-red-500' type="submit">Log In</button>
+                <button className={`mt-6 p-2 rounded-2xl bg-emerald-600 text-white`} type="submit">Log In</button>
                 <p className='text-red-700 py-2 font-medium'>{error}</p>
                 <p className='py-2'>Don't have an account ? <Link to='/register' className='text-blue-500'>Create Now</Link></p>
                 <br />

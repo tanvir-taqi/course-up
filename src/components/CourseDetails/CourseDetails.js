@@ -1,13 +1,16 @@
 import jsPDF from 'jspdf';
 import React from 'react';
+import { useContext } from 'react';
 import { FaHeart } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../context/UserContext';
 import './CourseDetails.css'
 
 
 const CourseDetails = () => {
 
     const courseDetails = useLoaderData()
+    const {dark}= useContext(AuthContext)
     
     const { _id, title, picture, rating, intro, about, name ,price} = courseDetails
 
@@ -22,13 +25,13 @@ const CourseDetails = () => {
 
     return (
         <div className=' py-32  '>
-            <div className='flex flex-col items-center justify-center my-10'>
+            <div className={`flex flex-col  items-center justify-center my-10`}>
                 <h1 className='text-2xl py-2'>Here we Present one of the best online course : <span className='text-emerald-900 font-semibold'>{title}</span></h1>
 
-            <button onClick={generatePDF} className='bg-slate-500 px-4 py-2 rounded'>Download PDF</button>
+            <button onClick={generatePDF} className={`bg-slate-500  px-4 py-2  rounded`}>Download PDF</button>
             </div>
           
-            <div className=' details-container mx-20 border border-red-700 flex flex-col md:flex-row'>
+            <div className={` details-container border ${dark ? ' border-gray-500': ' border-gray-300 '} md:mx-20 border  flex flex-col md:flex-row`}>
                 <div className='p-0'>
                     <img src={picture} alt="" />
                 </div>
@@ -39,7 +42,7 @@ const CourseDetails = () => {
                     <br />
                     <p className='p-6'>{intro}</p>
                     <Link to={`/courses/premium/${_id}`}>
-                        <button >Get Premium Access</button>
+                        <button className='premium-btn'>Get Premium Access</button>
                     </Link>
                 </div>
 

@@ -15,6 +15,7 @@ const UserContext = ({ children }) => {
 
     const [user, setUser] = useState(null)
     const [isLoading , setIsLoading] = useState(true)
+    const [dark,setDark] = useState(false)
 
     const signInSocial =(provider)=>{
         setIsLoading(true)
@@ -50,7 +51,16 @@ const UserContext = ({ children }) => {
     return ()=> unSubscribe()
    },[])
 
-    const authInfo = {user,signInSocial,logOut,createUser,signInUser,setIsLoading,isLoading,profileUpdate}
+    const authInfo = {user,
+        signInSocial,
+        logOut,
+        createUser,
+        signInUser,
+        setIsLoading,
+        isLoading,
+        profileUpdate,
+        dark,
+        setDark}
 
 
     return (

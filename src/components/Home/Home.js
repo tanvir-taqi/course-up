@@ -12,7 +12,7 @@ const Home = () => {
         <div className='py-32 '>
             
             <div className='md:mx-20 relative  '>
-            <div className='absolute md:inset-x-96 md:inset-y-52 inset-20 text-white flex justify-center items-center flex-col  z-50'>
+            <div className='absolute z-10 md:inset-x-96 md:inset-y-52 inset-20 text-white flex justify-center items-center flex-col '>
                 <h1 className=' font-bold text-3xl'>WelCome To CourseUP</h1>
                 <p>The Programming Courses Online!!</p>
                 <Link to='/courses' className='bg-gray-700 px-6 py-1 rounded-l-full '>Courses</Link>

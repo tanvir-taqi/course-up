@@ -3,3 +3,11 @@
     width: 40px;
     border-radius: 100%;
 }
+.premium-badge{
+        font-size: 14px;
+        margin-top: 12px;
+        font-weight: 400;
+        
+        color: rgb(253, 71, 71);
+}
+
