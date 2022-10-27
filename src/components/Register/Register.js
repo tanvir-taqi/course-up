@@ -1,12 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate} from 'react-router-dom';
 import { AuthContext } from '../../context/UserContext';
 
 const Register = () => {
     const { createUser, setIsLoading, profileUpdate, dark } = useContext(AuthContext)
-    
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
 
 
     const handleRegister = (e) => {
@@ -28,7 +30,9 @@ const Register = () => {
                         photoURL: photo
                     }
                     profileUpdate(profile)
-                        .then(() => { })
+                        .then(() => {
+                            navigate(from, { replace: true })
+                         })
                         .catch(err => console.log(err))
 
                 })
