@@ -42,7 +42,7 @@ const Header = () => {
                         <Link className={`mr-4 text-lg font-semibold  ${dark ? 'text-gray-700 hover:text-black': ' text-black hover:text-gray-400'} `} to='/faq' >FAQ</Link>
                         
                     </div>
-                    <div className="user  md:mx-3 ">
+                    <div className="user  md:mx-2 ">
                         {
                             user ? <div className='flex items-center'>
                               <Link to='/update'> {user?.photoURL ? <img src={user?.photoURL} alt="" className="user-img cursor-pointer" title={user?.displayName} /> : <FaUser></FaUser>} </Link>
