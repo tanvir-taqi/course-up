@@ -13,6 +13,7 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
+    const [error,setError] = useState('')
 
     const handleSocialSignIn = (provider) => {
         signInSocial(provider)
@@ -36,7 +37,7 @@ const Login = () => {
             
             navigate(from, { replace: true })
         })
-        .catch(err => alert(err))
+        .catch(() => setError("Wrong Email Or Password"))
         .finally(()=>setIsLoading(false))
     }
 
@@ -59,7 +60,8 @@ const Login = () => {
                     <input className='border border-gray-700 text-black rounded-lg py-1 px-2' type={showPassword ? 'text' : 'password'} name="password" id="password" placeholder='Enter Your Password' />
                 </div>
                 <button className='mt-6 p-2 rounded-2xl bg-red-500' type="submit">Log In</button>
-                <p>Don't have an account ? <Link to='/register'>Create Now</Link></p>
+                <p className='text-red-700 py-2 font-medium'>{error}</p>
+                <p className='py-2'>Don't have an account ? <Link to='/register' className='text-blue-500'>Create Now</Link></p>
                 <br />
                 <p className='text-center'>Or</p>
                 <br />

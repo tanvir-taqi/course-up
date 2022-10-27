@@ -32,7 +32,8 @@ const Header = () => {
                     <div className="nav-menu-link items-start flex flex-col md:flex-row py-12 md:py-1 ">
                         <Link className='mr-4 text-lg font-semibold text-gray-700 hover:text-black' to='/home'>Home</Link>
                         <Link className='mr-4 text-lg font-semibold text-gray-700 hover:text-black' to='/courses'>Courses</Link>
-                        <Link className='mr-4 text-lg font-semibold text-gray-700 hover:text-black' >Blog</Link>
+                        <Link className='mr-4 text-lg font-semibold text-gray-700 hover:text-black' to='/blogs' >Blog</Link>
+                        <Link className='mr-4 text-lg font-semibold text-gray-700 hover:text-black' to='/faq' >FAQ</Link>
                     </div>
                     <div className="user  md:mx-2 ">
                         {
