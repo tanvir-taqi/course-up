@@ -12,14 +12,15 @@ const CourseDetails = () => {
     const courseDetails = useLoaderData()
     const {dark}= useContext(AuthContext)
     
-    const { _id, title, picture, rating, intro, about, name ,price} = courseDetails
+    const { _id, title, picture, rating, intro, isActive, name ,price} = courseDetails
 
     const generatePDF =()=>{
             const doc = new jsPDF()
             doc.text(20,20,`${title}`)
             doc.text(20,40,`Instructor : ${name}`)
             doc.text(20,60,`Course Fee : ${price}`)
-            doc.addImage(picture,50,80,120,80)
+            doc.text(20,80,`Site :  https://courseup-88a46.web.app`)
+            doc.addImage(picture,50,100,120,80)
             doc.save(`${title}.pdf`)
     }
 
@@ -35,8 +36,9 @@ const CourseDetails = () => {
                 <div className='p-0'>
                     <img src={picture} alt="" />
                 </div>
-                <div className='w-full flex flex-col justify-center items-center'>
-                    <h1 className='md:text-4xl lg:text-6xl font-extrabold'>{title}</h1>
+                <div className='w-full  flex flex-col justify-center items-center'>
+               
+                    <h1 className='md:text-4xl lg:text-6xl font-extrabold'>{title} </h1>
                     <p className='font-semibold'>Instructor: <span className='text-lg font-bold'>{name}</span> </p>
                     <p className='flex items-center'>Rating: {rating} <span className='text-red-700'> <FaHeart></FaHeart> </span></p>
                     <br />

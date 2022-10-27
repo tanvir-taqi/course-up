@@ -13,15 +13,16 @@ const Home = () => {
             
             <div className='md:mx-20 relative  '>
             <div className='absolute z-10 md:inset-x-96 md:inset-y-52 inset-20 text-white flex justify-center items-center flex-col '>
-                <h1 className=' font-bold text-3xl'>WelCome To CourseUP</h1>
-                <p>The Programming Courses Online!!</p>
+                <h1 className=' font-bold text-3xl my-3'>WelCome To CourseUP</h1>
+                <p className='my-3'>The Programming Courses Online!!</p>
                 <Link to='/courses' className='bg-gray-700 px-6 py-1 rounded-l-full '>Courses</Link>
             </div>
                 <div className='slider-bg rounded-lg'  >
                 <AwesomeSlider animation="cubeAnimation">
-          <div data-src="https://i.ibb.co/2cYGz55/8289968-25328.jpg" />
-          <div data-src="https://i.ibb.co/7kDVyfy/4239567-90440.jpg" />
-          <div data-src="https://i.ibb.co/Fb25zM8/12686644-SL-103020-37400-03.jpg" />
+          <div data-src="assets/12686644_SL-103020-37400-03.jpg" />
+          <div data-src="assets/13311405_v627-aew-23-technologybackground.jpg" />
+          <div data-src="assets/4239567_90440.jpg" />
+          <div data-src="assets/8289968_25328.jpg" />
         </AwesomeSlider>
                 </div>
          

@@ -1,4 +1,4 @@
-# CoureUP 
+# CourseUP 
 is an website for online course on programming languages
 
 ## Live Link 

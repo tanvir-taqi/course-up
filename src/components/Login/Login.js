@@ -45,19 +45,19 @@ const Login = () => {
         <div className='py-32 flex justify-center'>
             <form onSubmit={handleLoginSubmit} className={` w-full md:w-1/3 flex flex-col  ${dark?'bg-slate-300' : 'bg-slate-700' } p-20 rounded-3xl`}>
                 <div className="form-group flex flex-col py-3">
-                    <label className='text-lg font-medium' htmlFor="email">Email</label>
-                    <input className='border border-gray-700 text-black rounded-lg py-1 px-2' type="email" name="email" id="email" placeholder='Enter Your Email' />
+                    <label className='text-lg font-medium' htmlFor="email" >Email</label>
+                    <input required className='border border-gray-700 text-black rounded-lg py-1 px-2' type="email" name="email" id="email" placeholder='Enter Your Email' />
                 </div>
                 <div className="form-group flex flex-col py-3">
                     <div className='flex justify-between items-center'>
-                        <label className='text-lg font-medium' htmlFor="password">Password</label>
+                        <label className='text-lg font-medium' htmlFor="password" >Password</label>
                         <div className="show-icon" onClick={() => setShowPassword(!showPassword)}>
                             {
                                 showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>
                             }
                         </div>
                     </div>
-                    <input className='border border-gray-700 text-black rounded-lg py-1 px-2' type={showPassword ? 'text' : 'password'} name="password" id="password" placeholder='Enter Your Password' />
+                    <input className='border border-gray-700 text-black rounded-lg py-1 px-2' type={showPassword ? 'text' : 'password'} name="password" id="password" placeholder='Enter Your Password'  required/>
                 </div>
                 <button className={`mt-6 p-2 rounded-2xl bg-emerald-600 text-white`} type="submit">Log In</button>
                 <p className='text-red-700 py-2 font-medium'>{error}</p>

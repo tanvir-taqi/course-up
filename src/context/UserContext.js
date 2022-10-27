@@ -17,30 +17,38 @@ const UserContext = ({ children }) => {
     const [isLoading , setIsLoading] = useState(true)
     const [dark,setDark] = useState(false)
 
+
+    // sign in with google and github function
+
     const signInSocial =(provider)=>{
         setIsLoading(true)
         return signInWithPopup(auth,provider)
 
     }
 
+    // register user 
+
     const createUser = (email, password)=>{
         setIsLoading(true)
             return createUserWithEmailAndPassword(auth, email, password)
     }
+    // user login function
     const signInUser = (email,password)=>{
         setIsLoading(true)
         return signInWithEmailAndPassword(auth,email,password)
     }
-
+//user profile update
     const profileUpdate = (profile)=>{
         setIsLoading(true)
             return updateProfile(auth.currentUser, profile)
     }
-
+//user log out function
     const logOut =()=>{
         setIsLoading(true)
         return signOut(auth)
     }
+
+    // user observer
 
    useEffect(()=>{
     const unSubscribe = onAuthStateChanged(auth,(currentUser)=>{
