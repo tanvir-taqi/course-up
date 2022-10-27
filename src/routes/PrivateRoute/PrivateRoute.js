@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../context/UserContext';
-import { Circles } from  'react-loader-spinner'
+import { Bars } from  'react-loader-spinner'
 // import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const PrivateRoute = ({ children }) => {
@@ -12,11 +12,11 @@ const PrivateRoute = ({ children }) => {
     const location = useLocation();
 
     if (isLoading) {
-        return <Circles
+        return <Bars
         height="80"
         width="80"
-        color="rgb(5 150 105)"
-        ariaLabel="circles-loading"
+        color="#4fa94d"
+        ariaLabel="bars-loading"
         wrapperStyle={{}}
         wrapperClass=""
         visible={true}

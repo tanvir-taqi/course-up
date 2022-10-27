@@ -13,7 +13,7 @@ const SingleCourse = ({ course }) => {
         <div>
                
 
-            <div className={`course-card rounded-3xl  p-6   text-gray-200 border ${dark ? 'border-gray-700' : 'border-gray-300'}  relative`}>
+            <div className={`course-card rounded-3xl  p-6    border ${dark ? 'border-gray-700' : 'border-gray-300'}  relative`}>
                 {
                     isActive && <div className='absolute inset-x-3/4 inset-y-1    w-20 h-10 '><p className='font-medium text-center text-white shadow-lg  bg-red-600 rounded-3xl '>Trending</p></div>
                 }

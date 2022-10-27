@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
-import { Link, useLocation, useNavigate} from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/UserContext';
 
 const Register = () => {
@@ -10,6 +10,8 @@ const Register = () => {
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
 
+
+  
 
     const handleRegister = (e) => {
         e.preventDefault()
@@ -20,7 +22,7 @@ const Register = () => {
         const password = form.password.value
         const confirm = form.confirm.value
 
-     
+
         if (password === confirm) {
             createUser(email, password)
                 .then(res => {
@@ -32,7 +34,7 @@ const Register = () => {
                     profileUpdate(profile)
                         .then(() => {
                             navigate(from, { replace: true })
-                         })
+                        })
                         .catch(err => console.log(err))
 
                 })
@@ -60,8 +62,9 @@ const Register = () => {
                 </div>
                 <div className="form-group flex flex-col py-3">
                     <label className='text-lg font-medium' htmlFor="password" >Password </label>
-                    <input required className='border border-gray-700 text-black rounded-lg py-1 px-2' type='password' name="password" id="password" placeholder='Enter Your Password' />
-                   
+                    <input required  className='border border-gray-700 text-black rounded-lg py-1 px-2' type='password' name="password" id="password" placeholder='Enter Your Password' />
+               >
+
                 </div>
                 <div className="form-group flex flex-col py-3">
                     <label className='text-lg font-medium' htmlFor="confirm">Confirm Password </label>
