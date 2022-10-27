@@ -28,7 +28,7 @@ const CourseDetails = () => {
             <div className={`flex flex-col  items-center justify-center my-10`}>
                 <h1 className='text-2xl py-2'>Here we Present one of the best online course : <span className='text-emerald-900 font-semibold'>{title}</span></h1>
 
-            <button onClick={generatePDF} className={`bg-slate-500  px-4 py-2  rounded`}>Download PDF</button>
+            <button onClick={generatePDF} className={`bg-slate-500  px-4 py-2  rounded-lg `}>Download PDF</button>
             </div>
           
             <div className={` details-container border ${dark ? ' border-gray-500': ' border-gray-300 '} md:mx-20 border  flex flex-col md:flex-row`}>
