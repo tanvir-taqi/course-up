@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaFacebook, FaGithub, FaTwitter } from 'react-icons/fa';
 
+
 const Footer = () => {
     return (
         <div className='py-24 md:px-24 p-6' >
@@ -13,6 +14,7 @@ const Footer = () => {
                     <div className='mx-2 hover:text-emerald-500'><FaGithub></FaGithub> </div>
                     <div className='mx-2 hover:text-emerald-500'><FaTwitter></FaTwitter></div>
                 </div>
+               
 
             </div>
 
