@@ -63,7 +63,7 @@ const Register = () => {
                 <div className="form-group flex flex-col py-3">
                     <label className='text-lg font-medium' htmlFor="password" >Password </label>
                     <input required  className='border border-gray-700 text-black rounded-lg py-1 px-2' type='password' name="password" id="password" placeholder='Enter Your Password' />
-               >
+               
 
                 </div>
                 <div className="form-group flex flex-col py-3">

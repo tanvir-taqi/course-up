@@ -5,8 +5,8 @@ import { FaFacebook, FaGithub, FaTwitter } from 'react-icons/fa';
 const Footer = () => {
     return (
         <div className='py-24 md:px-24 p-6' >
-            <div className='flex flex-col'>
-                <h1 className="text-lg font-bold">Our Contacts</h1>
+            <div className='flex flex-col text-center'>
+                <h1 className="text-3xl  font-bold">Contact Me</h1>
                 <p className='my-6'>Rochester,North Dakota, United States</p>
                 <p>Email : fakemail@email.com</p>
                 <div className='flex my-6'>
