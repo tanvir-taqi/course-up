@@ -23,7 +23,7 @@ const SingleCourse = ({ course }) => {
                 <p>{intro.lenght < 150 ? intro : intro.slice(0, 150)}...</p>
                 <div className=' py-6 flex lg:flex-row flex-col justify-between items-center '>
                     <p className='flex items-center'>Rating: {rating} <span className='text-red-700'> <FaHeart></FaHeart> </span></p>
-                    <Link to={`/courses/${_id}`} className='w-52 flex items-center justify-center py-1 rounded-tr-full rounded-br-lg font-semibold bg-stone-600'><p>See Details</p>  <span> <FaArrowRight ></FaArrowRight></span></Link>
+                    <Link to={`/courses/${_id}`} className='w-52 flex items-center justify-center py-1 rounded-tr-full rounded-br-lg font-semibold bg-stone-500 hover:text-stone-900'><p>See Details</p>  <span> <FaArrowRight ></FaArrowRight></span></Link>
                 </div>
             </div>
         </div>

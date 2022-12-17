@@ -37,8 +37,8 @@ const Header = () => {
 
                     <Link to='/' onClick={() => setDisplay(false)} className={`font-bold flex  ${dark ? 'text-emerald-900' : ' text-emerald-600'} text-2xl`}>
                         <span><img className='logo-img' src='assets/favicon.png' alt="" /></span>
-                        Course
-                        <span className=' text-4xl font-extrabold text-gray-900 shadow-sm'>UP</span>
+                        {/* Course
+                        <span className=' text-4xl font-extrabold text-gray-900 shadow-sm'>UP</span> */}
                         <small className={`premium-badge ${user || 'hidden'}`}>Premium</small>
                     </Link>
 

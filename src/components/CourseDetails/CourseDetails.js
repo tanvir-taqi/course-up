@@ -27,7 +27,7 @@ const CourseDetails = () => {
     return (
         <div className=' py-32  '>
             <div className={`flex flex-col  items-center justify-center my-10`}>
-                <h1 className='text-2xl py-2'>Here we Present one of the best online course : <span className='text-emerald-900 font-semibold'>{title}</span></h1>
+                <h1 className='text-2xl p-2'>Here we Present one of the best online course : <span className='font-semibold'>{title}</span></h1>
 
             <button onClick={generatePDF} className={`bg-slate-500  px-4 py-4  rounded-lg `}>Download PDF</button>
             </div>

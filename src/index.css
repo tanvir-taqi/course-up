@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
 }
 .light-theme{
-    background: rgb(239, 255, 237);
+    background: rgb(216, 219, 216);
     color: black;
 }
 .dark-theme{

@@ -13,7 +13,7 @@ const Courses = () => {
             
                 <div className='flex flex-col'>
                     {
-                        courses.map(course => <Link className='text-xl md:p-4 p-2 font-medium' to={`/courses/${course._id}`}>{course.title}</Link>)
+                        courses.map(course => <Link className='text-xl md:p-4 p-2 font-medium' key={course._id}  to={`/courses/${course._id}`}>{course.title}</Link>)
                     }
                 </div>
                 <div className='grid xl:grid-cols-2 grid-cols-1 gap-4'>
