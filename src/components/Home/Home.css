@@ -2,3 +2,8 @@
     
    filter: brightness(25%);
 }
+
+.slider-img{
+   width: 500px;
+   height: 700px;
+}

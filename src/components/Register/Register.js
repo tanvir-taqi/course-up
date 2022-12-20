@@ -6,6 +6,7 @@ import { AuthContext } from '../../context/UserContext';
 
 const Register = () => {
     const { createUser, setIsLoading, profileUpdate, dark } = useContext(AuthContext)
+    const [authErr , setAUthErr] = useState('')
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
@@ -34,12 +35,22 @@ const Register = () => {
                     profileUpdate(profile)
                         .then(() => {
                             navigate(from, { replace: true })
+                            setIsLoading(false)
+                            form.reset()
                         })
                         .catch(err => console.log(err))
 
                 })
-                .catch(err => alert(err))
-                .finally(() => setIsLoading(false))
+                .catch(err => {
+                    if(err){
+                        setAUthErr("Password should be at least 6 characters ")
+                    }
+                 
+                  
+                })
+                
+        }else{
+            setAUthErr('Password did not match.')
         }
 
     }
@@ -66,6 +77,7 @@ const Register = () => {
                
 
                 </div>
+                <p className='text-red-500'>{authErr}</p>
                 <div className="form-group flex flex-col py-3">
                     <label className='text-lg font-medium' htmlFor="confirm">Confirm Password </label>
                     <input required className='border border-gray-700 text-black rounded-lg py-1 px-2' type='password' name="confirm" id="confirm" placeholder='Confirm Your Password' />

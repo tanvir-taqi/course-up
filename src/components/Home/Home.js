@@ -17,12 +17,12 @@ const Home = () => {
                 <p className='my-3'>The Programming Courses Online!!</p>
                 <Link to='/courses' className='bg-gray-700 px-6 py-1 rounded-l-full '>Courses</Link>
             </div>
-                <div className='slider-bg rounded-lg'  >
-                <AwesomeSlider animation="cubeAnimation">
-          <div data-src="assets/4239567_90440.png" />
-          <div data-src="assets/8289968_25328.png" />
-          <div data-src="assets/13311405_v627-aew-23-technologybackground.png" />
-          <div data-src="assets/12686644_SL-103020-37400-03.png" />
+                <div className='slider-bg rounded-lg'>
+                <AwesomeSlider animation="cubeAnimation" >
+          <div  data-src="assets/4239567_90440.png" />
+          <div  data-src="assets/8289968_25328.png" />
+          <div  data-src="assets/13311405_v627-aew-23-technologybackground.png" />
+          <div  data-src="assets/12686644_SL-103020-37400-03.png" />
         </AwesomeSlider>
                 </div>
          

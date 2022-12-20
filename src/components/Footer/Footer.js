@@ -10,9 +10,9 @@ const Footer = () => {
                 <p className='my-6'>Rochester,North Dakota, United States</p>
                 <p>Email : fakemail@email.com</p>
                 <div className='flex my-6'>
-                    <div className='mx-2 hover:text-emerald-500'><FaFacebook></FaFacebook></div>
-                    <div className='mx-2 hover:text-emerald-500'><FaGithub></FaGithub> </div>
-                    <div className='mx-2 hover:text-emerald-500'><FaTwitter></FaTwitter></div>
+                    <div className={`mx-2 hover:text-gray-700`}><FaFacebook></FaFacebook></div>
+                    <div className={`mx-2 hover:text-gray-700`}><FaGithub></FaGithub> </div>
+                    <div className={`mx-2 hover:text-gray-700`}><FaTwitter></FaTwitter></div>
                 </div>
                
 
