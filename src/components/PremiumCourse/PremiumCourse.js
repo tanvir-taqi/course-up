@@ -12,7 +12,7 @@ const PremiumCourse = () => {
     return (
         <div className='py-32 px-3 md:px-32'>
            <div className="premium-header">
-            <h1 className="text-center text-2xl">Welcome <Link to='/update' className='font-medium text-emerald-700'> {user?.displayName}</Link> to Our Premium course <span className='text-4xl font-extrabold text-emerald-900'>{title}</span> </h1>
+            <h1 className="text-center text-2xl">Welcome <Link to='/update' className='font-bold text-gray-700'> {user?.displayName}</Link> to Our Premium course <span className='text-4xl font-extrabold text-gray-700'>{title}</span> </h1>
             <p className='my-4 text-3xl font-bold text-center'>Course Fee : {price}</p>
 
             <div className='my-6 mb-10 flex justify-center'>

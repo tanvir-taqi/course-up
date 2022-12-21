@@ -82,7 +82,7 @@ const Register = () => {
                     <label className='text-lg font-medium' htmlFor="confirm">Confirm Password </label>
                     <input required className='border border-gray-700 text-black rounded-lg py-1 px-2' type='password' name="confirm" id="confirm" placeholder='Confirm Your Password' />
                 </div>
-                <button className='mt-6 p-2 mb-3 rounded-2xl bg-emerald-600 text-white' type="submit">Register</button>
+                <button className='mt-6 p-2 mb-3 rounded-2xl bg-slate-600 hover:bg-slate-800 text-white' type="submit">Register</button>
                 <p>Already have an account ? <Link to='/login' className='text-blue-500'>Sign In Now</Link></p>
 
             </form>
