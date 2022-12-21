@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -46,7 +46,6 @@ const Register = () => {
                         setAUthErr("Password should be at least 6 characters ")
                     }
                  
-                  
                 })
                 
         }else{
@@ -54,6 +53,10 @@ const Register = () => {
         }
 
     }
+
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+      })
 
 
     return (

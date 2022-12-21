@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/UserContext';
 
@@ -23,6 +23,10 @@ const ProfileUpdate = () => {
         
 
     }
+
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+      })
 
     return (
         <div className='py-32 flex justify-center'>

@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Blog = () => {
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+      })
     return (
         <div className='py-32'>
             <h1 className="text-center text-3xl font-semibold"> Blogs </h1>

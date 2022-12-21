@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const FAQ = () => {
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+      })
     return (
         <div className='py-32 md:px-10 grid grid-cols-1 gap-6'>
             <h1 className="text-center text-3xl font-semibold capitalize"> frequently asked questions </h1>

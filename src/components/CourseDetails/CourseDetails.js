@@ -1,5 +1,5 @@
 import jsPDF from 'jspdf';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useContext } from 'react';
 import { FaHeart } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
@@ -13,6 +13,9 @@ const CourseDetails = () => {
     const {dark}= useContext(AuthContext)
     
     const { _id, title, picture, rating, intro, isActive, name ,price} = courseDetails
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+      })
 
     const generatePDF =()=>{
             const doc = new jsPDF()

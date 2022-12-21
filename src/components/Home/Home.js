@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/custom-animations/cube-animation.css';
 import 'react-awesome-slider/dist/styles.css';
@@ -7,7 +7,9 @@ import './Home.css'
 
 const Home = () => {
 
-  
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+      })
     return (
         <div className='py-32 '>
             

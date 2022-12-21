@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import SingleCourse from '../SingleCourse/SingleCourse';
 import './Courses.css'
@@ -6,7 +6,9 @@ import './Courses.css'
 const Courses = () => {
 
     const courses  = useLoaderData()
-
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+      })
 
     return (
         <div className='py-32 md:px-10 course-container'>

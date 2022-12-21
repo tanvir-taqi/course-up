@@ -1,5 +1,5 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useContext } from 'react';
 import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -41,6 +41,9 @@ const Login = () => {
         .finally(()=>setIsLoading(false))
     }
 
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+      })
     return (
         <div className='py-32 flex justify-center'>
             <form onSubmit={handleLoginSubmit} className={` w-full md:w-1/3 flex flex-col  ${dark?'bg-slate-300' : 'bg-slate-700' } p-20 rounded-3xl`}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useContext } from 'react';
 import { FaHeart } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
@@ -8,6 +8,10 @@ const PremiumCourse = () => {
     const course = useLoaderData()
     const {user} = useContext(AuthContext)
    const {_id,title,picture,rating,intro,about,name,price} = course
+
+   useEffect(()=>{
+    window.scrollTo(0, 0);
+  })
 
     return (
         <div className='py-32 px-3 md:px-32'>
